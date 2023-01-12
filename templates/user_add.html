@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user_add</title>
+</head>
+<body>
+<h1>user_add:{{ msg }}</h1>
+<form method="post" action="{% url "polls:user_add" %}">
+    {% csrf_token %}
+    <label>
+        用户名:
+        <input type="text" name="username">
+    </label>
+    <label>
+        密码:
+        <input type="password" name="password">
+    </label>
+    <label>
+        年龄:
+        <input type="number" name="age">
+    </label>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

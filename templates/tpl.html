@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Django模板语法</h1>
+    <p>{{ name }}、{{ roles }}、{{ roles.0 }}</p>
+
+    {% for role in roles %}
+        <p>{{ role }}</p>
+    {% endfor %}
+
+    <p>{{ user.name }}、{{ user.age }}、{{ user.roles }}</p>
+
+    <ul>
+    {% for attr,value in user.items %}
+        <li>{{ attr }}:{{ value }}</li>
+    {% endfor %}
+    </ul>
+
+    {% if roles.0 == "CEO" %}
+        {{ roles.0 }}
+    {% elif roles.1 == "CEO" %}
+        {{ roles.1 }}
+    {% elif roles.2 == "CEO" %}
+        {{ roles.2 }}
+    {% endif %}
+
+
+</body>
+</html>
